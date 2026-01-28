@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="container">
+    <header class="header">
+      <div class="logo">
+        <div class="logoMark"></div>
+        <div>
+          <div class="title">IntelBase Email Lookup</div>
+          <div class="subtitle">Learning Project • HTML/CSS/JS + Python</div>
+        </div>
+      </div>
+    </header>
+    <section class="card">
+      <div class="row">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" type="email" placeholder="name@example.com" autocomplete="email" />
+          <div class="hint">Enter an email you are authorized to check.</div>
+        </div>
+      </div>
+      <div class="row row2">
+        <label class="switch">
+          <input id="includeBreaches" type="checkbox" checked />
+          <span class="slider"></span>
+          <span class="switchText">Include breach summary</span>
+        </label>
+        <label class="switch">
+          <input id="consent" type="checkbox" />
+          <span class="slider"></span>
+          <span class="switchText">I have permission / consent</span>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="btn" class="btn" type="button">Lookup</button>
+        <button id="clear" class="btn secondary" type="button">Clear</button>
+      </div>
+      <div id="status" class="status neutral">Ready.</div>
+    </section>
+    <section class="card">
+      <div id="output"></div>
+    </section>
+    <footer class="footer">
+      <div>
+        Tip: Set <code>INTELBASE_API_KEY</code> in your environment before running.
+      </div>
+    </footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
